@@ -1,0 +1,13 @@
+strings:
+  paths: Football/Resources/Strings/en.lproj/Localizable.strings
+  templateName: structured-swift3
+  output: Football/Resources/Strings/Localizable.swift
+xcassets:
+  paths: Football/Resources/Images/Assets.xcassets
+  templateName: swift4
+  output: Football/Resources/Images/Assets.swift
+fonts:
+  inputs: Football/Resources/Fonts
+  outputs:
+    templateName: swift4
+    output: Football/Resources/Fonts/Fonts.swift

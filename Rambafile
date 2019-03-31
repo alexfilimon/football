@@ -1,0 +1,29 @@
+### Headers settings
+company: alexfilimon
+
+### Xcode project settings
+project_name: Football
+xcodeproj_path: Football.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_target: Football
+
+# The file path for new modules
+project_file_path: Football/User Stories
+
+# The Xcode group path to new modules
+project_group_path: Football/User Stories
+
+### Dependencies settings section
+podfile_path: Podfile
+
+### Catalogs
+catalogs:
+- 'https://github.com/surfstudio/generamba-templates'
+
+### Templates
+templates:
+- {name: surf_mvp_module}
+- {name: surf_mvp_coordinatable_module}
+- {name: surf_mvp_coordinatable_alert}

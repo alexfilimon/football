@@ -1,0 +1,69 @@
+PODS:
+  - ObjcExceptionBridging (1.0.1):
+    - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
+  - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
+  - ReactiveDataDisplayManager (3.2.0)
+  - Realm (3.13.1):
+    - Realm/Headers (= 3.13.1)
+  - Realm/Headers (3.13.1)
+  - RealmSwift (3.13.1):
+    - Realm (= 3.13.1)
+  - SurfUtils/KeyboardPresentable (6.0.1)
+  - SwiftGen (6.1.0)
+  - SwiftLint (0.31.0)
+  - SwiftMessages (6.0.2):
+    - SwiftMessages/App (= 6.0.2)
+  - SwiftMessages/App (6.0.2)
+  - XCGLogger (6.1.0):
+    - XCGLogger/Core (= 6.1.0)
+  - XCGLogger/Core (6.1.0):
+    - ObjcExceptionBridging
+
+DEPENDENCIES:
+  - ReactiveDataDisplayManager (from `https://github.com/surfstudio/ReactiveDataDisplayManager`, commit `32080e06c38ee3a077898388d73dc21a5a29cc28`)
+  - RealmSwift
+  - SurfUtils/KeyboardPresentable (from `https://github.com/surfstudio/iOS-Utils.git`)
+  - SwiftGen
+  - SwiftLint
+  - SwiftMessages
+  - XCGLogger
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ObjcExceptionBridging
+    - Realm
+    - RealmSwift
+    - SwiftGen
+    - SwiftLint
+    - SwiftMessages
+    - XCGLogger
+
+EXTERNAL SOURCES:
+  ReactiveDataDisplayManager:
+    :commit: 32080e06c38ee3a077898388d73dc21a5a29cc28
+    :git: https://github.com/surfstudio/ReactiveDataDisplayManager
+  SurfUtils:
+    :git: https://github.com/surfstudio/iOS-Utils.git
+
+CHECKOUT OPTIONS:
+  ReactiveDataDisplayManager:
+    :commit: 32080e06c38ee3a077898388d73dc21a5a29cc28
+    :git: https://github.com/surfstudio/ReactiveDataDisplayManager
+  SurfUtils:
+    :commit: 6b9ccc2625325eb9480900788a94476532e86289
+    :git: https://github.com/surfstudio/iOS-Utils.git
+
+SPEC CHECKSUMS:
+  ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
+  ReactiveDataDisplayManager: d3cd1d9b470a9fa0a955c823dc344340b794b5f8
+  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
+  RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
+  SurfUtils: 67b27c4f1491ca50bdbc8214cc89f120d91b1482
+  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
+  SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
+  SwiftMessages: 8b3cc68dba2f1c91aac1a74c90b10287aac35371
+  XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
+
+PODFILE CHECKSUM: 82fac9f70eb540e5f4f5299d31d968574cee9f30
+
+COCOAPODS: 1.6.0.beta.2
