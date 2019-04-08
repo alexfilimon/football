@@ -76,28 +76,28 @@ final class GameAddPresenter: GameAddViewOutput, GameAddModuleInput {
         }
 
         // adding game to store
-        let store = GameJSONStore()
-        let hostTeam = TeamEntity(name: hostTeamName)
-        let visitorTeam = TeamEntity(name: visitorTeamName)
-        if let editingGameId = editingGameId {
-            let game = GameEntity(id: editingGameId,
-                                  score: Score(hostScore: hostTeamScore,
-                                               visitorScore: visitorTeamScore),
-                                  hostTeam: hostTeam,
-                                  visitorTeam: visitorTeam,
-                                  date: date,
-                                  address: address)
-            store.update(game: game)
-        } else {
-            let game = GameEntity(id: store.generateId(),
-                                  score: Score(hostScore: hostTeamScore,
-                                               visitorScore: visitorTeamScore),
-                                  hostTeam: hostTeam,
-                                  visitorTeam: visitorTeam,
-                                  date: date,
-                                  address: address)
-            store.add(game: game)
-        }
+//        let store = GameJSONStore()
+//        let hostTeam = TeamEntity(name: hostTeamName)
+//        let visitorTeam = TeamEntity(name: visitorTeamName)
+//        if let editingGameId = editingGameId {
+//            let game = GameEntity(id: editingGameId,
+//                                  score: Score(hostScore: hostTeamScore,
+//                                               visitorScore: visitorTeamScore),
+//                                  hostTeam: hostTeam,
+//                                  visitorTeam: visitorTeam,
+//                                  date: date,
+//                                  address: address)
+//            store.update(game: game)
+//        } else {
+//            let game = GameEntity(id: store.generateId(),
+//                                  score: Score(hostScore: hostTeamScore,
+//                                               visitorScore: visitorTeamScore),
+//                                  hostTeam: hostTeam,
+//                                  visitorTeam: visitorTeam,
+//                                  date: date,
+//                                  address: address)
+//            store.add(game: game)
+//        }
 
         output?.needUpdate()
         router?.dismiss()
@@ -134,8 +134,8 @@ final class GameAddPresenter: GameAddViewOutput, GameAddModuleInput {
         date = gameForEditing.date
         hostTeamScore = gameForEditing.score.hostScore
         visitorTeamScore = gameForEditing.score.visitorScore
-        hostTeamName = gameForEditing.hostTeam.name
-        visitorTeamName = gameForEditing.visitorTeam.name
+        hostTeamName = gameForEditing.hostTeam?.name
+        visitorTeamName = gameForEditing.visitorTeam?.name
         address = gameForEditing.address
     }
 

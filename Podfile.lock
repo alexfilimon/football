@@ -1,4 +1,7 @@
 PODS:
+  - EasyRealm (3.4.0):
+    - RealmSwift (~> 3.10)
+  - GRDB.swift (3.7.0)
   - ObjcExceptionBridging (1.0.1):
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
   - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
@@ -20,6 +23,8 @@ PODS:
     - ObjcExceptionBridging
 
 DEPENDENCIES:
+  - EasyRealm
+  - GRDB.swift
   - ReactiveDataDisplayManager (from `https://github.com/surfstudio/ReactiveDataDisplayManager`, commit `32080e06c38ee3a077898388d73dc21a5a29cc28`)
   - RealmSwift
   - SurfUtils/KeyboardPresentable (from `https://github.com/surfstudio/iOS-Utils.git`)
@@ -30,6 +35,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - EasyRealm
+    - GRDB.swift
     - ObjcExceptionBridging
     - Realm
     - RealmSwift
@@ -54,6 +61,8 @@ CHECKOUT OPTIONS:
     :git: https://github.com/surfstudio/iOS-Utils.git
 
 SPEC CHECKSUMS:
+  EasyRealm: 284b0f26de97e84821772aa61a363f9617e44c61
+  GRDB.swift: 51cc9e57ae8ff7083a9d674c97925aa1de06aac5
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   ReactiveDataDisplayManager: d3cd1d9b470a9fa0a955c823dc344340b794b5f8
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
@@ -64,6 +73,6 @@ SPEC CHECKSUMS:
   SwiftMessages: 8b3cc68dba2f1c91aac1a74c90b10287aac35371
   XCGLogger: 7f7f43f15dfe3a305fa1342b7dc29af656289abd
 
-PODFILE CHECKSUM: 82fac9f70eb540e5f4f5299d31d968574cee9f30
+PODFILE CHECKSUM: 3da073dcf908f945090df863f099e66630a96e0a
 
 COCOAPODS: 1.6.0.beta.2

@@ -6,7 +6,9 @@
 //  Copyright © 2019 Александр Филимонов. All rights reserved.
 //
 
+import Foundation
+
 enum GamesListViewState {
-    case data(games: [GameEntity])
-    case error(error: GameServiceError)
+    case data(games: [GameRealmEntry])
+    case error(error: LocalizedError)
 }

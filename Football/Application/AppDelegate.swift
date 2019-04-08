@@ -7,36 +7,31 @@
 //
 
 import UIKit
+import RealmSwift
+import EasyRealm
+import GRDB
+
+//var dbQueue: DatabaseQueue?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // MARK: - Properties
+
     var window: UIWindow?
+
+    // MARK: - Private properties
+
+    private let coreDataManager = CoreDataManager(modelName: "FootballModel")
 
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
 
-//        let store = GameJSONStore()
-//        store.removeAll()
-//        var game1 = GameEntity()
-//        game1.hostTeam.name = "Зенит"
-//        game1.visitorTeam.name = "Спартак"
-//        game1.score = Score("1:0")
-//        var game2 = GameEntity()
-//        var game3 = GameEntity()
-//        game1.id = store.generateId()
-//        store.add(game: game1)
-//        game2.id = store.generateId()
-//        store.add(game: game2)
-//        game3.id = store.generateId()
-//        store.add(game: game3)
-
         // configure main module
         window = UIWindow()
         let gamesListController = GamesListModuleConfigurator().configure()
-//        let navigationController = ColoredNavigationController(rootViewController: gamesListController)
         let navigationController = UINavigationController(rootViewController: gamesListController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
@@ -44,5 +39,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-}
+    func applicationWillTerminate(_ application: UIApplication) {
+        coreDataManager.saveChanges()
+    }
 
+    func applicationWillResignActive(_ application: UIApplication) {
+        coreDataManager.saveChanges()
+    }
+
+}

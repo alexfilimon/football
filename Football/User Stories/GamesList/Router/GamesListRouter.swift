@@ -22,7 +22,7 @@ final class GamesListRouter: GamesListRouterInput {
         view?.presentModule(navigationController, animated: true, completion: nil)
     }
 
-    func showRemoveAlert(for game: GameEntity, onRemove: @escaping EmptyClosure) {
+    func showRemoveAlert(for game: GameRealmEntry, onRemove: @escaping EmptyClosure) {
         let alertController = UIAlertController(title: "Удалить?", message: "Вы действительно хотете удалить этот протокол?", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Нет", style: .cancel, handler: nil))
         alertController.addAction(UIAlertAction(title: "Да", style: .destructive, handler: { (action) in
@@ -31,10 +31,10 @@ final class GamesListRouter: GamesListRouterInput {
         view?.presentModule(alertController, animated: true, completion: nil)
     }
 
-    func showDetail(game: GameEntity, output: GameAddModuleOutput? = nil) {
-        let addGameController = GameAddModuleConfigurator().configure(editingGame: game, output: output)
-        let navigationController = UINavigationController(rootViewController: addGameController)
-        view?.presentModule(navigationController, animated: true, completion: nil)
+    func showDetail(game: GameRealmEntry, output: GameAddModuleOutput? = nil) {
+//        let addGameController = GameAddModuleConfigurator().configure(editingGame: game, output: output)
+//        let navigationController = UINavigationController(rootViewController: addGameController)
+//        view?.presentModule(navigationController, animated: true, completion: nil)
     }
 
 }

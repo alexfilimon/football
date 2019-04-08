@@ -36,23 +36,34 @@
 		C104CBCA224CFC71009C46F0 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = C104CBC9224CFC71009C46F0 /* UIApplication.swift */; };
 		C104CBCD224D087C009C46F0 /* GameCellGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C104CBCC224D087C009C46F0 /* GameCellGenerator.swift */; };
 		C104CBD0224F3B86009C46F0 /* GamesListTableDataDisplayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C104CBCF224F3B86009C46F0 /* GamesListTableDataDisplayManager.swift */; };
+		C10BCB3922571D3D00CB8168 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10BCB3822571D3D00CB8168 /* AppDatabase.swift */; };
+		C13564482250E67C00B9B063 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13564472250E67C00B9B063 /* Object.swift */; };
+		C135644A2250ECFA00B9B063 /* EntryEntityConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13564492250ECFA00B9B063 /* EntryEntityConvertible.swift */; };
+		C13564532250F5CD00B9B063 /* RealmUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13564522250F5CD00B9B063 /* RealmUpdatable.swift */; };
+		C13564582251EDE600B9B063 /* PlayerRealmStoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13564572251EDE600B9B063 /* PlayerRealmStoreTest.swift */; };
+		C14C4D052255D68F0002AFEA /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14C4D042255D68F0002AFEA /* Storable.swift */; };
+		C14C4D072255D6ED0002AFEA /* StorageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14C4D062255D6ED0002AFEA /* StorageContext.swift */; };
+		C14C4D092255D8430002AFEA /* ConfigrationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14C4D082255D8430002AFEA /* ConfigrationType.swift */; };
+		C14C4D0B2255D86A0002AFEA /* RealmStorageContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14C4D0A2255D86A0002AFEA /* RealmStorageContext.swift */; };
+		C14C4D0D2255D8E90002AFEA /* RealmStorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14C4D0C2255D8E90002AFEA /* RealmStorageError.swift */; };
+		C14C4D0F225673350002AFEA /* RealmStoreMeasurePerfomanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14C4D0E225673350002AFEA /* RealmStoreMeasurePerfomanceTest.swift */; };
 		C1829A792248BBF500F84C80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1829A782248BBF500F84C80 /* AppDelegate.swift */; };
 		C1829A802248BBF700F84C80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1829A7F2248BBF700F84C80 /* Assets.xcassets */; };
 		C1829A832248BBF700F84C80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1829A812248BBF700F84C80 /* LaunchScreen.storyboard */; };
 		C1829A8E2248BBF700F84C80 /* FootballTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1829A8D2248BBF700F84C80 /* FootballTests.swift */; };
-		C1829AA32248BCB900F84C80 /* TeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1829AA22248BCB900F84C80 /* TeamEntity.swift */; };
-		C1829AA52248BCC600F84C80 /* PlayerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1829AA42248BCC600F84C80 /* PlayerEntity.swift */; };
-		C1829AA72248BCD100F84C80 /* GameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1829AA62248BCD100F84C80 /* GameEntity.swift */; };
 		C1829AA92248BDC800F84C80 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1829AA82248BDC800F84C80 /* Score.swift */; };
-		C1829AAE2248C0DE00F84C80 /* GameAbstractService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1829AAD2248C0DE00F84C80 /* GameAbstractService.swift */; };
 		C1829AB12248C13900F84C80 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1829AB02248C13900F84C80 /* Closures.swift */; };
-		C1829AB32248C1AC00F84C80 /* GameServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1829AB22248C1AC00F84C80 /* GameServiceError.swift */; };
-		C1829AB52248C43200F84C80 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1829AB42248C43200F84C80 /* GameService.swift */; };
-		C1829AB72248C47500F84C80 /* GameServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1829AB62248C47500F84C80 /* GameServiceFactory.swift */; };
 		C1829ABA2248C4A200F84C80 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1829AB92248C4A200F84C80 /* Factory.swift */; };
-		C1829ABD2248C4E100F84C80 /* GameAbstractStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1829ABC2248C4E100F84C80 /* GameAbstractStore.swift */; };
-		C1829ABF2248C53900F84C80 /* GameJSONStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1829ABE2248C53900F84C80 /* GameJSONStore.swift */; };
-		C1829AC42248D75400F84C80 /* PlayerTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1829AC32248D75400F84C80 /* PlayerTeamEntity.swift */; };
+		C1D956E7225B0CE100E6BA5E /* FootballModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1D956E5225B0CE100E6BA5E /* FootballModel.xcdatamodeld */; };
+		C1D95706225B0EF100E6BA5E /* Player+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D95700225B0EF100E6BA5E /* Player+CoreDataClass.swift */; };
+		C1D95707225B0EF100E6BA5E /* Player+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D95701225B0EF100E6BA5E /* Player+CoreDataProperties.swift */; };
+		C1D95708225B0EF100E6BA5E /* Team+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D95702225B0EF100E6BA5E /* Team+CoreDataClass.swift */; };
+		C1D95709225B0EF100E6BA5E /* Team+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D95703225B0EF100E6BA5E /* Team+CoreDataProperties.swift */; };
+		C1D9570A225B0EF100E6BA5E /* Game+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D95704225B0EF100E6BA5E /* Game+CoreDataClass.swift */; };
+		C1D9570B225B0EF100E6BA5E /* Game+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D95705225B0EF100E6BA5E /* Game+CoreDataProperties.swift */; };
+		C1D9570D225B11FD00E6BA5E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D9570C225B11FD00E6BA5E /* CoreDataManager.swift */; };
+		C1D9570F225B153300E6BA5E /* LocalIncrementalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D9570E225B153300E6BA5E /* LocalIncrementalStore.swift */; };
+		C1D95711225B1B0D00E6BA5E /* Game+AttributeMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D95710225B1B0D00E6BA5E /* Game+AttributeMapping.swift */; };
 		C1DCB9F422501E730087E17C /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCB9F322501E730087E17C /* Date.swift */; };
 		C29202658F8F148526F6900F /* GamesListRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7FDDDD8EA0D28DF6FA6C0 /* GamesListRouterInput.swift */; };
 		C44374550D9BE5A498A85C6A /* GameAddViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ADFF6B8625AB7F6835871D5 /* GameAddViewController.storyboard */; };
@@ -106,6 +117,17 @@
 		C104CBC9224CFC71009C46F0 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		C104CBCC224D087C009C46F0 /* GameCellGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCellGenerator.swift; sourceTree = "<group>"; };
 		C104CBCF224F3B86009C46F0 /* GamesListTableDataDisplayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListTableDataDisplayManager.swift; sourceTree = "<group>"; };
+		C10BCB3822571D3D00CB8168 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
+		C13564472250E67C00B9B063 /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		C13564492250ECFA00B9B063 /* EntryEntityConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryEntityConvertible.swift; sourceTree = "<group>"; };
+		C13564522250F5CD00B9B063 /* RealmUpdatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUpdatable.swift; sourceTree = "<group>"; };
+		C13564572251EDE600B9B063 /* PlayerRealmStoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRealmStoreTest.swift; sourceTree = "<group>"; };
+		C14C4D042255D68F0002AFEA /* Storable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
+		C14C4D062255D6ED0002AFEA /* StorageContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageContext.swift; sourceTree = "<group>"; };
+		C14C4D082255D8430002AFEA /* ConfigrationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigrationType.swift; sourceTree = "<group>"; };
+		C14C4D0A2255D86A0002AFEA /* RealmStorageContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorageContext.swift; sourceTree = "<group>"; };
+		C14C4D0C2255D8E90002AFEA /* RealmStorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorageError.swift; sourceTree = "<group>"; };
+		C14C4D0E225673350002AFEA /* RealmStoreMeasurePerfomanceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStoreMeasurePerfomanceTest.swift; sourceTree = "<group>"; };
 		C1829A752248BBF500F84C80 /* Football.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Football.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1829A782248BBF500F84C80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1829A7F2248BBF700F84C80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,19 +136,19 @@
 		C1829A892248BBF700F84C80 /* FootballTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FootballTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1829A8D2248BBF700F84C80 /* FootballTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballTests.swift; sourceTree = "<group>"; };
 		C1829A8F2248BBF700F84C80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1829AA22248BCB900F84C80 /* TeamEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamEntity.swift; sourceTree = "<group>"; };
-		C1829AA42248BCC600F84C80 /* PlayerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerEntity.swift; sourceTree = "<group>"; };
-		C1829AA62248BCD100F84C80 /* GameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntity.swift; sourceTree = "<group>"; };
 		C1829AA82248BDC800F84C80 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
-		C1829AAD2248C0DE00F84C80 /* GameAbstractService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAbstractService.swift; sourceTree = "<group>"; };
 		C1829AB02248C13900F84C80 /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
-		C1829AB22248C1AC00F84C80 /* GameServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameServiceError.swift; sourceTree = "<group>"; };
-		C1829AB42248C43200F84C80 /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
-		C1829AB62248C47500F84C80 /* GameServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameServiceFactory.swift; sourceTree = "<group>"; };
 		C1829AB92248C4A200F84C80 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
-		C1829ABC2248C4E100F84C80 /* GameAbstractStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAbstractStore.swift; sourceTree = "<group>"; };
-		C1829ABE2248C53900F84C80 /* GameJSONStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameJSONStore.swift; sourceTree = "<group>"; };
-		C1829AC32248D75400F84C80 /* PlayerTeamEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTeamEntity.swift; sourceTree = "<group>"; };
+		C1D956E6225B0CE100E6BA5E /* Football.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Football.xcdatamodel; sourceTree = "<group>"; };
+		C1D95700225B0EF100E6BA5E /* Player+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C1D95701225B0EF100E6BA5E /* Player+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C1D95702225B0EF100E6BA5E /* Team+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Team+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C1D95703225B0EF100E6BA5E /* Team+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Team+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C1D95704225B0EF100E6BA5E /* Game+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C1D95705225B0EF100E6BA5E /* Game+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C1D9570C225B11FD00E6BA5E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		C1D9570E225B153300E6BA5E /* LocalIncrementalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalIncrementalStore.swift; sourceTree = "<group>"; };
+		C1D95710225B1B0D00E6BA5E /* Game+AttributeMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+AttributeMapping.swift"; sourceTree = "<group>"; };
 		C1DCB9F322501E730087E17C /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		E2A0DAC086324ACE55D4977D /* GameAddPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GameAddPresenter.swift; sourceTree = "<group>"; };
 		EC6E086EBAF2A41EEB25AB5A /* Pods-FootballTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FootballTests.debug.xcconfig"; path = "Target Support Files/Pods-FootballTests/Pods-FootballTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -269,6 +291,7 @@
 		C104CBBF224CF677009C46F0 /* ReusableLayer */ = {
 			isa = PBXGroup;
 			children = (
+				C14C4D032255D6830002AFEA /* Storable */,
 				C104CBC0224CF682009C46F0 /* ColoredNavigationController.swift */,
 			);
 			path = ReusableLayer;
@@ -299,6 +322,51 @@
 			path = Adapter;
 			sourceTree = "<group>";
 		};
+		C10BCB3A22571DAF00CB8168 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				C1D956E4225B0CC500E6BA5E /* CoreData */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		C13564542251EDA900B9B063 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C13564552251EDB000B9B063 /* PlayerService */,
+				C14C4D0E225673350002AFEA /* RealmStoreMeasurePerfomanceTest.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C13564552251EDB000B9B063 /* PlayerService */ = {
+			isa = PBXGroup;
+			children = (
+				C13564562251EDCA00B9B063 /* Store */,
+			);
+			path = PlayerService;
+			sourceTree = "<group>";
+		};
+		C13564562251EDCA00B9B063 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				C13564572251EDE600B9B063 /* PlayerRealmStoreTest.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		C14C4D032255D6830002AFEA /* Storable */ = {
+			isa = PBXGroup;
+			children = (
+				C14C4D042255D68F0002AFEA /* Storable.swift */,
+				C14C4D062255D6ED0002AFEA /* StorageContext.swift */,
+				C14C4D082255D8430002AFEA /* ConfigrationType.swift */,
+				C14C4D0A2255D86A0002AFEA /* RealmStorageContext.swift */,
+				C14C4D0C2255D8E90002AFEA /* RealmStorageError.swift */,
+			);
+			path = Storable;
+			sourceTree = "<group>";
+		};
 		C1829A6C2248BBF500F84C80 = {
 			isa = PBXGroup;
 			children = (
@@ -322,8 +390,8 @@
 		C1829A772248BBF500F84C80 /* Football */ = {
 			isa = PBXGroup;
 			children = (
+				C10BCB3A22571DAF00CB8168 /* Database */,
 				C1829A9E2248BC4E00F84C80 /* User Stories */,
-				C1829A9D2248BC3A00F84C80 /* Services */,
 				C1829A9C2248BC3300F84C80 /* Models */,
 				C1829A9B2248BC2800F84C80 /* Resources */,
 				C1829A9A2248BC2200F84C80 /* Library */,
@@ -335,6 +403,7 @@
 		C1829A8C2248BBF700F84C80 /* FootballTests */ = {
 			isa = PBXGroup;
 			children = (
+				C13564542251EDA900B9B063 /* Services */,
 				C1829A8D2248BBF700F84C80 /* FootballTests.swift */,
 				C1829A8F2248BBF700F84C80 /* Info.plist */,
 			);
@@ -347,6 +416,7 @@
 				C1829A782248BBF500F84C80 /* AppDelegate.swift */,
 				C1829A812248BBF700F84C80 /* LaunchScreen.storyboard */,
 				C1829A842248BBF700F84C80 /* Info.plist */,
+				C10BCB3822571D3D00CB8168 /* AppDatabase.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -381,14 +451,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		C1829A9D2248BC3A00F84C80 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				C1829AAB2248C04000F84C80 /* GameService */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		C1829A9E2248BC4E00F84C80 /* User Stories */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,33 +471,9 @@
 		C1829AA02248BCA100F84C80 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				C1829AA22248BCB900F84C80 /* TeamEntity.swift */,
-				C1829AA42248BCC600F84C80 /* PlayerEntity.swift */,
-				C1829AA62248BCD100F84C80 /* GameEntity.swift */,
 				C1829AA82248BDC800F84C80 /* Score.swift */,
-				C1829AC32248D75400F84C80 /* PlayerTeamEntity.swift */,
 			);
 			path = Entity;
-			sourceTree = "<group>";
-		};
-		C1829AAB2248C04000F84C80 /* GameService */ = {
-			isa = PBXGroup;
-			children = (
-				C1829ABB2248C4D100F84C80 /* Store */,
-				C1829AAC2248C0C900F84C80 /* Service */,
-			);
-			path = GameService;
-			sourceTree = "<group>";
-		};
-		C1829AAC2248C0C900F84C80 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				C1829AAD2248C0DE00F84C80 /* GameAbstractService.swift */,
-				C1829AB22248C1AC00F84C80 /* GameServiceError.swift */,
-				C1829AB42248C43200F84C80 /* GameService.swift */,
-				C1829AB62248C47500F84C80 /* GameServiceFactory.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		C1829AAF2248C12700F84C80 /* Extensions */ = {
@@ -454,17 +492,28 @@
 				C104CBAC224CEFD5009C46F0 /* ModuleTransitionable.swift */,
 				C104CBBB224CF44A009C46F0 /* Router.swift */,
 				C104CBBD224CF458009C46F0 /* Presentable.swift */,
+				C13564472250E67C00B9B063 /* Object.swift */,
+				C13564492250ECFA00B9B063 /* EntryEntityConvertible.swift */,
+				C13564522250F5CD00B9B063 /* RealmUpdatable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		C1829ABB2248C4D100F84C80 /* Store */ = {
+		C1D956E4225B0CC500E6BA5E /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				C1829ABC2248C4E100F84C80 /* GameAbstractStore.swift */,
-				C1829ABE2248C53900F84C80 /* GameJSONStore.swift */,
+				C1D95700225B0EF100E6BA5E /* Player+CoreDataClass.swift */,
+				C1D95701225B0EF100E6BA5E /* Player+CoreDataProperties.swift */,
+				C1D95702225B0EF100E6BA5E /* Team+CoreDataClass.swift */,
+				C1D95703225B0EF100E6BA5E /* Team+CoreDataProperties.swift */,
+				C1D95704225B0EF100E6BA5E /* Game+CoreDataClass.swift */,
+				C1D95705225B0EF100E6BA5E /* Game+CoreDataProperties.swift */,
+				C1D956E5225B0CE100E6BA5E /* FootballModel.xcdatamodeld */,
+				C1D9570C225B11FD00E6BA5E /* CoreDataManager.swift */,
+				C1D9570E225B153300E6BA5E /* LocalIncrementalStore.swift */,
+				C1D95710225B1B0D00E6BA5E /* Game+AttributeMapping.swift */,
 			);
-			path = Store;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		C2D486B401E1626E7898B67A /* Presenter */ = {
@@ -653,6 +702,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Football/Pods-Football-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/EasyRealm/EasyRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveDataDisplayManager/ReactiveDataDisplayManager.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -663,6 +714,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveDataDisplayManager.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -711,32 +764,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1829AA32248BCB900F84C80 /* TeamEntity.swift in Sources */,
-				C1829ABD2248C4E100F84C80 /* GameAbstractStore.swift in Sources */,
 				C1829AB12248C13900F84C80 /* Closures.swift in Sources */,
-				C1829AAE2248C0DE00F84C80 /* GameAbstractService.swift in Sources */,
 				C104CBC1224CF682009C46F0 /* ColoredNavigationController.swift in Sources */,
 				C104CBC3224CF7DA009C46F0 /* GamesListViewState.swift in Sources */,
+				C1D95707225B0EF100E6BA5E /* Player+CoreDataProperties.swift in Sources */,
 				C104CBBC224CF44A009C46F0 /* Router.swift in Sources */,
 				C104CBBA224CF436009C46F0 /* MainRouter.swift in Sources */,
 				C1829A792248BBF500F84C80 /* AppDelegate.swift in Sources */,
 				C104CBCA224CFC71009C46F0 /* UIApplication.swift in Sources */,
-				C1829AA52248BCC600F84C80 /* PlayerEntity.swift in Sources */,
-				C1829ABF2248C53900F84C80 /* GameJSONStore.swift in Sources */,
-				C1829AB72248C47500F84C80 /* GameServiceFactory.swift in Sources */,
-				C1829AB32248C1AC00F84C80 /* GameServiceError.swift in Sources */,
 				C1829ABA2248C4A200F84C80 /* Factory.swift in Sources */,
 				C104CBC7224CF960009C46F0 /* GameTableCell.swift in Sources */,
+				C13564532250F5CD00B9B063 /* RealmUpdatable.swift in Sources */,
 				C104CBBE224CF458009C46F0 /* Presentable.swift in Sources */,
-				C1829AC42248D75400F84C80 /* PlayerTeamEntity.swift in Sources */,
 				C1DCB9F422501E730087E17C /* Date.swift in Sources */,
-				C1829AB52248C43200F84C80 /* GameService.swift in Sources */,
 				C104CBCD224D087C009C46F0 /* GameCellGenerator.swift in Sources */,
+				C135644A2250ECFA00B9B063 /* EntryEntityConvertible.swift in Sources */,
+				C1D9570F225B153300E6BA5E /* LocalIncrementalStore.swift in Sources */,
 				C1829AA92248BDC800F84C80 /* Score.swift in Sources */,
-				C1829AA72248BCD100F84C80 /* GameEntity.swift in Sources */,
 				2D14B4B615FF6EA1944B2122 /* GamesListModuleConfigurator.swift in Sources */,
 				5426BD1EB04F265AD8A44BA2 /* GamesListRouter.swift in Sources */,
+				C1D9570D225B11FD00E6BA5E /* CoreDataManager.swift in Sources */,
+				C14C4D0B2255D86A0002AFEA /* RealmStorageContext.swift in Sources */,
 				C29202658F8F148526F6900F /* GamesListRouterInput.swift in Sources */,
+				C10BCB3922571D3D00CB8168 /* AppDatabase.swift in Sources */,
+				C1D95711225B1B0D00E6BA5E /* Game+AttributeMapping.swift in Sources */,
 				30C733FC5222081AAF24F027 /* GamesListPresenter.swift in Sources */,
 				E3893E9F098BA38D197AF110 /* GamesListModuleInput.swift in Sources */,
 				C104CBAD224CEFD5009C46F0 /* ModuleTransitionable.swift in Sources */,
@@ -745,14 +796,25 @@
 				35265989E0772AF1A61B28D8 /* GamesListViewInput.swift in Sources */,
 				C104CBD0224F3B86009C46F0 /* GamesListTableDataDisplayManager.swift in Sources */,
 				BB4D1B9C26DC3A86C35A6B6E /* GamesListViewOutput.swift in Sources */,
+				C14C4D072255D6ED0002AFEA /* StorageContext.swift in Sources */,
+				C1D9570A225B0EF100E6BA5E /* Game+CoreDataClass.swift in Sources */,
 				0CB6DE962EAC9F64BA9C0342 /* GameAddModuleConfigurator.swift in Sources */,
+				C1D956E7225B0CE100E6BA5E /* FootballModel.xcdatamodeld in Sources */,
 				5337CAD4D5A84086F0542878 /* GameAddRouter.swift in Sources */,
 				3A54F5CAA8A165473877A34B /* GameAddRouterInput.swift in Sources */,
+				C14C4D0D2255D8E90002AFEA /* RealmStorageError.swift in Sources */,
+				C1D95706225B0EF100E6BA5E /* Player+CoreDataClass.swift in Sources */,
 				4B64D7911E661C6063AB5C54 /* GameAddPresenter.swift in Sources */,
+				C14C4D052255D68F0002AFEA /* Storable.swift in Sources */,
 				9BC7B4A50D84D8A51C21A179 /* GameAddModuleInput.swift in Sources */,
 				4890813396E26A1C8A078355 /* GameAddModuleOutput.swift in Sources */,
+				C13564482250E67C00B9B063 /* Object.swift in Sources */,
 				098F923575181342D4413FB6 /* GameAddViewController.swift in Sources */,
+				C1D95709225B0EF100E6BA5E /* Team+CoreDataProperties.swift in Sources */,
 				87723E1E292DC39227773A72 /* GameAddViewInput.swift in Sources */,
+				C14C4D092255D8430002AFEA /* ConfigrationType.swift in Sources */,
+				C1D9570B225B0EF100E6BA5E /* Game+CoreDataProperties.swift in Sources */,
+				C1D95708225B0EF100E6BA5E /* Team+CoreDataClass.swift in Sources */,
 				4132DBE39A067D722DDF90EE /* GameAddViewOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -761,7 +823,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C13564582251EDE600B9B063 /* PlayerRealmStoreTest.swift in Sources */,
 				C1829A8E2248BBF700F84C80 /* FootballTests.swift in Sources */,
+				C14C4D0F225673350002AFEA /* RealmStoreMeasurePerfomanceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1013,6 +1077,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C1D956E5225B0CE100E6BA5E /* FootballModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C1D956E6225B0CE100E6BA5E /* Football.xcdatamodel */,
+			);
+			currentVersion = C1D956E6225B0CE100E6BA5E /* Football.xcdatamodel */;
+			path = FootballModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C1829A6D2248BBF500F84C80 /* Project object */;
 }

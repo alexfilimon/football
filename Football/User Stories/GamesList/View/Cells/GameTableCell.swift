@@ -41,12 +41,12 @@ class GameTableCell: UITableViewCell {
 
 extension GameTableCell: Configurable {
 
-    typealias Model = GameEntity
+    typealias Model = GameRealmEntry
 
-    func configure(with model: GameEntity) {
-        hostTeamLabel.text = model.hostTeam.name
-        visitorTeamLabel.text = model.visitorTeam.name
-        scoreLabel.text = "\(model.score.hostScore) : \(model.score.visitorScore)"
+    func configure(with model: GameRealmEntry) {
+        hostTeamLabel.text = model.hostTeam?.name
+        visitorTeamLabel.text = model.visitorTeam?.name
+        scoreLabel.text = "\(Score(model.score).hostScore) : \(Score(model.score).visitorScore)"
     }
 
 }

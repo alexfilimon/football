@@ -83,12 +83,12 @@ custom_rules:
         message: "Use UIImage(assetName: ) instead"
         severity: error
 
-    realm_in_ui:
-        included: "Screens/.*.swift|User Stories/.*.swift"
-        name: "Realm can be used only in services"
-        regex: "Realm"
-        message: "Realm can be used only in serivces"
-        severity: error
+    # realm_in_ui:
+    #     included: "Screens/.*.swift|User Stories/.*.swift"
+    #     name: "Realm can be used only in services"
+    #     regex: "Realm"
+    #     message: "Realm can be used only in serivces"
+    #     severity: error
 
     disclosure_of_view_details:
         included: ".*ViewOutput.swift|.*ViewInput.swift"

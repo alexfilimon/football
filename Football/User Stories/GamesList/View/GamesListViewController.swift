@@ -55,7 +55,7 @@ final class GamesListViewController: UIViewController, GamesListViewInput, Modul
 
     // MARK: - Private methods
 
-    private func configureData(_ games: [GameEntity]) {
+    private func configureData(_ games: [GameRealmEntry]) {
         adapter.clearHeaderGenerators()
         adapter.clearCellGenerators()
         adapter.addSectionHeaderGenerator(EmptyTableHeaderGenerator())

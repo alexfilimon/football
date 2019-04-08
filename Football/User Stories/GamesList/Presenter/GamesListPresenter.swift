@@ -16,7 +16,7 @@ final class GamesListPresenter: GamesListViewOutput, GamesListModuleInput {
 
     // MARK: - Private properties
 
-    private lazy var store: GameAbstractStore = GameJSONStore()
+    private lazy var context: StorageContext? = try? RealmStorageContext()
 
     // MARK: - GamesListViewOutput
 
@@ -24,13 +24,13 @@ final class GamesListPresenter: GamesListViewOutput, GamesListModuleInput {
         reloadAllData()
     }
 
-    func gameSelected(game: GameEntity) {
+    func gameSelected(game: GameRealmEntry) {
         router?.showDetail(game: game, output: self)
     }
 
-    func gameDelete(game: GameEntity) {
+    func gameDelete(game: GameRealmEntry) {
         router?.showRemoveAlert(for: game, onRemove: { [weak self] in
-            self?.store.remove(at: game.id)
+            try? self?.context?.delete(object: game)
             self?.reloadAllData()
         })
     }
@@ -44,7 +44,9 @@ final class GamesListPresenter: GamesListViewOutput, GamesListModuleInput {
     // MARK: - Private methods
 
     private func reloadAllData() {
-        view?.configure(with: .data(games: store.getAll()))
+        context?.fetch(GameRealmEntry.self, predicate: nil, sorted: Sorted(key: "id", ascending: true), completion: { [weak self] games in
+            self?.view?.configure(with: .data(games: games))
+        })
     }
 
 }

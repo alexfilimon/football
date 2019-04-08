@@ -8,7 +8,7 @@
 
 protocol GamesListViewOutput {
     func viewLoaded()
-    func gameSelected(game: GameEntity)
-    func gameDelete(game: GameEntity)
+    func gameSelected(game: GameRealmEntry)
+    func gameDelete(game: GameRealmEntry)
     func addGame()
 }
