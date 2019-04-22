@@ -10,6 +10,6 @@ import Foundation
 
 protocol GamesListRouterInput {
     func addGame(output: GameAddModuleOutput?)
-    func showRemoveAlert(for game: GameRealmEntry, onRemove: @escaping EmptyClosure)
-    func showDetail(game: GameRealmEntry, output: GameAddModuleOutput?)
+    func showRemoveAlert(for game: Game, onRemove: @escaping EmptyClosure)
+    func showDetail(game: Game, output: GameAddModuleOutput?)
 }

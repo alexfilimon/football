@@ -12,7 +12,7 @@ final class GameCellGenerator: SelectableItem {
 
     // MARK: - Private properties
 
-    let game: GameRealmEntry
+    let game: Game
 
     // MARK: - Public properties
 
@@ -21,7 +21,7 @@ final class GameCellGenerator: SelectableItem {
 
     // MARK: - Initialization and deinitialization
 
-    init(game: GameRealmEntry) {
+    init(game: Game) {
         self.game = game
     }
 

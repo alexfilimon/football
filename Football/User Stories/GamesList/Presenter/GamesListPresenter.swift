@@ -14,23 +14,19 @@ final class GamesListPresenter: GamesListViewOutput, GamesListModuleInput {
     var router: GamesListRouterInput?
     var output: GamesListModuleOutput?
 
-    // MARK: - Private properties
-
-    private lazy var context: StorageContext? = try? RealmStorageContext()
-
     // MARK: - GamesListViewOutput
 
     func viewLoaded() {
         reloadAllData()
     }
 
-    func gameSelected(game: GameRealmEntry) {
+    func gameSelected(game: Game) {
         router?.showDetail(game: game, output: self)
     }
 
-    func gameDelete(game: GameRealmEntry) {
+    func gameDelete(game: Game) {
         router?.showRemoveAlert(for: game, onRemove: { [weak self] in
-            try? self?.context?.delete(object: game)
+            // try? self?.context?.delete(object: game)
             self?.reloadAllData()
         })
     }
@@ -44,9 +40,7 @@ final class GamesListPresenter: GamesListViewOutput, GamesListModuleInput {
     // MARK: - Private methods
 
     private func reloadAllData() {
-        context?.fetch(GameRealmEntry.self, predicate: nil, sorted: Sorted(key: "id", ascending: true), completion: { [weak self] games in
-            self?.view?.configure(with: .data(games: games))
-        })
+        
     }
 
 }

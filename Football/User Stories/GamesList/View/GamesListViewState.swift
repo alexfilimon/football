@@ -9,6 +9,6 @@
 import Foundation
 
 enum GamesListViewState {
-    case data(games: [GameRealmEntry])
+    case data(games: [Game])
     case error(error: LocalizedError)
 }

@@ -7,5 +7,5 @@
 //
 
 protocol GameAddModuleInput: class {
-    func set(gameForEditing: GameEntity)
+    func set(gameForEditing: Game)
 }

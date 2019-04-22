@@ -9,5 +9,5 @@
 import Foundation
 
 typealias EmptyClosure = () -> Void
-typealias GamesListClosure = ([GameEntity]) -> Void
-typealias GameClosure = (GameEntity) -> Void
+typealias GamesListClosure = ([Game]) -> Void
+typealias GameClosure = (Game) -> Void

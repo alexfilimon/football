@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 final class GameAddPresenter: GameAddViewOutput, GameAddModuleInput {
 
@@ -25,7 +26,7 @@ final class GameAddPresenter: GameAddViewOutput, GameAddModuleInput {
     private var address: String?
     private var date: Date?
 
-    private var editingGameId: Int?
+    private var editingGameId: UUID?
 
     private var isNewGame: Bool {
         return editingGameId == nil
@@ -76,28 +77,15 @@ final class GameAddPresenter: GameAddViewOutput, GameAddModuleInput {
         }
 
         // adding game to store
-//        let store = GameJSONStore()
 //        let hostTeam = TeamEntity(name: hostTeamName)
 //        let visitorTeam = TeamEntity(name: visitorTeamName)
-//        if let editingGameId = editingGameId {
-//            let game = GameEntity(id: editingGameId,
-//                                  score: Score(hostScore: hostTeamScore,
-//                                               visitorScore: visitorTeamScore),
-//                                  hostTeam: hostTeam,
-//                                  visitorTeam: visitorTeam,
-//                                  date: date,
-//                                  address: address)
-//            store.update(game: game)
-//        } else {
-//            let game = GameEntity(id: store.generateId(),
-//                                  score: Score(hostScore: hostTeamScore,
-//                                               visitorScore: visitorTeamScore),
-//                                  hostTeam: hostTeam,
-//                                  visitorTeam: visitorTeam,
-//                                  date: date,
-//                                  address: address)
-//            store.add(game: game)
-//        }
+        if let editingGameId = editingGameId {
+            let context = CoreDataManager.shared.persistentContainer.viewContext
+            let game = Game(context: context)
+            
+        } else {
+
+        }
 
         output?.needUpdate()
         router?.dismiss()
@@ -129,11 +117,11 @@ final class GameAddPresenter: GameAddViewOutput, GameAddModuleInput {
 
     // MARK: - GameAddModuleInput
 
-    func set(gameForEditing: GameEntity) {
+    func set(gameForEditing: Game) {
         editingGameId = gameForEditing.id
-        date = gameForEditing.date
-        hostTeamScore = gameForEditing.score.hostScore
-        visitorTeamScore = gameForEditing.score.visitorScore
+        date = gameForEditing.date as Date?
+        hostTeamScore = Score(gameForEditing.score ?? "").hostScore
+        visitorTeamScore = Score(gameForEditing.score ?? "").visitorScore
         hostTeamName = gameForEditing.hostTeam?.name
         visitorTeamName = gameForEditing.visitorTeam?.name
         address = gameForEditing.address

@@ -12,7 +12,7 @@ final class GameAddModuleConfigurator {
 
     // MARK: - Internal methods
 
-    func configure(editingGame: GameEntity? = nil,
+    func configure(editingGame: Game? = nil,
                    output: GameAddModuleOutput? = nil) -> GameAddViewController {
         guard let view = UIStoryboard(name: String(describing: GameAddViewController.self),
                                       bundle: Bundle.main).instantiateInitialViewController() as? GameAddViewController else {

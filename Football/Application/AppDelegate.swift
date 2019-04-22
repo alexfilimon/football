@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
-import EasyRealm
-import GRDB
 
 //var dbQueue: DatabaseQueue?
 
@@ -22,8 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Private properties
 
-    private let coreDataManager = CoreDataManager(modelName: "FootballModel")
-
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
@@ -31,8 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // configure main module
         window = UIWindow()
-        let gamesListController = GamesListModuleConfigurator().configure()
-        let navigationController = UINavigationController(rootViewController: gamesListController)
+//        let gamesListController = GamesListModuleConfigurator().configure()
+//        let navigationController = UINavigationController(rootViewController: gamesListController)
+        let playerListController = PlayerListModuleConfigurator().configure()
+        let navigationController = UINavigationController(rootViewController: playerListController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
 
@@ -40,11 +37,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        coreDataManager.saveChanges()
+        try? CoreDataManager.shared.saveContext()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        coreDataManager.saveChanges()
+        try? CoreDataManager.shared.saveContext()
     }
 
 }

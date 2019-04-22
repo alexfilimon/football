@@ -12,12 +12,10 @@ target 'Football' do
   pod 'SwiftLint'
   pod 'SwiftGen'
   pod 'SwiftMessages'
-  pod 'RealmSwift'
   pod 'ReactiveDataDisplayManager', :git=>"https://github.com/surfstudio/ReactiveDataDisplayManager", :commit=>"32080e06c38ee3a077898388d73dc21a5a29cc28"
   pod 'XCGLogger'
   pod 'SurfUtils/KeyboardPresentable', :git => "https://github.com/surfstudio/iOS-Utils.git"
-  pod 'EasyRealm'
-  pod 'GRDB.swift'
+  pod 'Eureka'
 
   target 'FootballTests' do
     inherit! :search_paths
