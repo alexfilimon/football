@@ -7,5 +7,5 @@
 //
 
 protocol TeamListViewInput: class {
-
+    func configure(with teams: [Team])
 }

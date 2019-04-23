@@ -16,4 +16,9 @@ final class TeamListRouter: TeamListRouterInput {
 
 	// MARK: - TeamListRouterInput
 
+    func showTeamDetail(_ team: Team?, output: TeamDetailModuleOutput? = nil) {
+        let module = TeamDetailModuleConfigurator().configure(team: team, output: output)
+        view?.push(module: module, animated: true)
+    }
+
 }

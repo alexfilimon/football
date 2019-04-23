@@ -7,5 +7,5 @@
 //
 
 protocol PlayerListModuleInput: class {
-
+    func set(team: Team?)
 }

@@ -10,4 +10,5 @@ protocol PlayerListViewOutput {
     func playerSelected(_ player: Player)
     func viewLoaded()
     func addPlayer()
+    func removePlayer(_ player: Player)
 }

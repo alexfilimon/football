@@ -17,7 +17,7 @@ final class GamesListViewController: UIViewController, GamesListViewInput, Modul
 
     // MARK: - Private properties
 
-    private lazy var adapter = GamesListTableDataDisplayManager(collection: tableView)
+    private lazy var adapter = ActionableTableDataDisplayManager(collection: tableView)
 
     // MARK: - Properties
 

@@ -7,5 +7,5 @@
 //
 
 protocol TeamDetailModuleOutput: class {
-
+    func teamUpdated()
 }

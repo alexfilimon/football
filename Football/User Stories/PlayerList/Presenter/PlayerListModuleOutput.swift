@@ -7,5 +7,5 @@
 //
 
 protocol PlayerListModuleOutput: class {
-
+    func playersUpdated()
 }

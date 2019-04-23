@@ -2,7 +2,7 @@
 //  Player+CoreDataProperties.swift
 //  
 //
-//  Created by Alexander Filimonov on 22/04/2019.
+//  Created by Alexander Filimonov on 23/04/2019.
 //
 //
 
@@ -21,6 +21,7 @@ extension Player {
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
     @NSManaged public var phone: String?
+    @NSManaged public var number: Int16
     @NSManaged public var team: Team?
 
 }

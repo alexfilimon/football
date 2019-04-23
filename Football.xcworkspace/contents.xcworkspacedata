@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/alexfilimon/xCode/Football/Football/Database/CoreData/Player+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:Football.xcodeproj">
    </FileRef>
    <FileRef

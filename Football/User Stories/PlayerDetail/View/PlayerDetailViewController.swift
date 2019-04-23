@@ -11,6 +11,18 @@ import Eureka
 
 final class PlayerDetailViewController: FormViewController, PlayerDetailViewInput, ModuleTransitionable {
 
+    // MARK: - Nested types
+
+    private enum Constants {
+        public enum Row {
+            static let name = "name"
+            static let phone = "phone"
+            static let email = "email"
+            static let address = "address"
+            static let number = "number"
+        }
+    }
+
     // MARK: - Properties
 
     var output: PlayerDetailViewOutput?
@@ -46,6 +58,31 @@ final class PlayerDetailViewController: FormViewController, PlayerDetailViewInpu
         self.navigationItem.title = title
     }
 
+    func setName(_ text: String?) {
+        let row: TextRow? = form.rowBy(tag: Constants.Row.name)
+        row?.value = text
+    }
+
+    func setEmail(_ text: String?) {
+        let row: EmailRow? = form.rowBy(tag: Constants.Row.email)
+        row?.value = text
+    }
+
+    func setPhone(_ text: String?) {
+        let row: PhoneRow? = form.rowBy(tag: Constants.Row.phone)
+        row?.value = text
+    }
+
+    func setAddress(_ text: String?) {
+        let row: TextRow? = form.rowBy(tag: Constants.Row.address)
+        row?.value = text
+    }
+
+    func setNumber(_ num: Int16) {
+        let row: IntRow? = form.rowBy(tag: Constants.Row.number)
+        row?.value = Int(num)
+    }
+
     // MARK: - Actions
 
     @objc
@@ -62,16 +99,29 @@ final class PlayerDetailViewController: FormViewController, PlayerDetailViewInpu
 
     private func configureForms() {
         form +++ Section("Информация")
-            <<< NameRow() {
+            <<< TextRow(Constants.Row.name) {
                 $0.title = "Имя"
-                $0.placeholder = "Иван"
+                $0.placeholder = "Иван Петров"
                 $0.add(rule: RuleRequired())
                 $0.validationOptions = .validatesOnChange
             }
             .onChange { [weak self] (row) in
                 self?.output?.nameEdited(row.value)
             }
-            <<< PhoneRow() {
+
+            <<< IntRow(Constants.Row.number) {
+                $0.title = "Номер"
+                $0.placeholder = "7"
+                $0.add(rule: RuleRequired())
+                $0.add(rule: RuleGreaterThan(min: 0))
+                $0.add(rule: RuleSmallerThan(max: 100))
+                $0.validationOptions = .validatesOnChange
+            }
+            .onChange { [weak self] (row) in
+                self?.output?.numberEdited(Int16(row.value ?? 0))
+            }
+
+            <<< PhoneRow(Constants.Row.phone) {
                 $0.title = "Телефон"
                 $0.placeholder = "8 999 999 99 99"
                 $0.add(rule: RuleRequired())
@@ -79,7 +129,8 @@ final class PlayerDetailViewController: FormViewController, PlayerDetailViewInpu
             .onChange { [weak self] (row) in
                 self?.output?.phoneEdited(row.value)
             }
-            <<< EmailRow() {
+
+            <<< EmailRow(Constants.Row.email) {
                 $0.title = "Почта"
                 $0.placeholder = "email@mail.ru"
                 $0.add(rule: RuleRequired())
@@ -87,11 +138,12 @@ final class PlayerDetailViewController: FormViewController, PlayerDetailViewInpu
             .onChange { [weak self] (row) in
                 self?.output?.emailEdited(row.value)
             }
-            <<< TextRow() {
+
+            <<< TextRow(Constants.Row.address) {
                 $0.title = "Адрес"
                 $0.placeholder = "Воронеж"
                 $0.add(rule: RuleRequired())
-                }
+            }
             .onChange { [weak self] (row) in
                 self?.output?.addressEdited(row.value)
             }

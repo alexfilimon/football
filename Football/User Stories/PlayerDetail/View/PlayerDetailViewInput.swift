@@ -8,4 +8,9 @@
 
 protocol PlayerDetailViewInput: class {
     func configure(with state: PlayerDetailViewStyle)
+    func setName(_ text: String?)
+    func setEmail(_ text: String?)
+    func setPhone(_ text: String?)
+    func setAddress(_ text: String?)
+    func setNumber(_ num: Int16)
 }

@@ -14,7 +14,7 @@ protocol SwipeActionableGenerator {
     func getTrailingActions() -> [UIContextualAction]
 }
 
-final class GamesListTableDataDisplayManager: BaseTableDataDisplayManager {
+final class ActionableTableDataDisplayManager: BaseTableDataDisplayManager {
     func tableView(
         _ tableView: UITableView,
         leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath

@@ -8,4 +8,5 @@
 
 protocol PlayerDetailModuleInput: class {
     func configure(with player: Player?)
+    func configure(with team: Team?)
 }

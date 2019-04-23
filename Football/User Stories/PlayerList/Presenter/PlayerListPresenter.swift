@@ -20,6 +20,7 @@ final class PlayerListPresenter: PlayerListViewOutput, PlayerListModuleInput {
 
     private var context = CoreDataManager.shared.persistentContainer.viewContext
     private var players: [Player] = []
+    private var team: Team?
 
     // MARK: - PlayerListViewOutput
 
@@ -28,26 +29,33 @@ final class PlayerListPresenter: PlayerListViewOutput, PlayerListModuleInput {
     }
 
     func playerSelected(_ player: Player) {
-        router?.showPlayerDetail(with: player, output: self)
+        router?.showPlayerDetail(with: player, team: team, output: self)
     }
 
     func addPlayer() {
-//        let entity = Player(context: context)
-//        entity.name = ["alex", "ivan", "some"].randomElement()
-//        entity.address = "some address"
-//        entity.email = "email"
-//        entity.id = UUID()
-//        entity.phone = "+7 888 999 11 22"
-//        try? context.save()
-//
-//        loadData()
-        router?.showPlayerDetail(with: nil, output: self)
+        router?.showPlayerDetail(with: nil, team: team, output: self)
+    }
+
+    func removePlayer(_ player: Player) {
+        context.delete(player)
+        try? context.save()
+        players.removeAll(where: { $0.id == player.id })
+        view?.showPlayers(players)
+    }
+
+    // MARK: - PlayerListModuleInput
+
+    func set(team: Team?) {
+        self.team = team
     }
 
     // MARK: - Private methods
 
     private func loadData() {
         let request: NSFetchRequest<Player> = Player.fetchRequest()
+        if let team = team {
+            request.predicate = NSPredicate(format: "team = %@", argumentArray: [team])
+        }
         let players = (try? context.fetch(request)) ?? []
         self.players = players
         view?.showPlayers(players)
@@ -58,5 +66,6 @@ final class PlayerListPresenter: PlayerListViewOutput, PlayerListModuleInput {
 extension PlayerListPresenter: PlayerDetailModuleOutput {
     func playerUpdated() {
         loadData()
+        output?.playersUpdated()
     }
 }

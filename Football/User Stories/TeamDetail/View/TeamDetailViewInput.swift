@@ -7,5 +7,8 @@
 //
 
 protocol TeamDetailViewInput: class {
-
+    func configure(with state: TeamDetailViewStyle)
+    func setName(_ text: String?)
+    func setAddress(_ text: String?)
+    func setCountPlayers(_ count: Int)
 }

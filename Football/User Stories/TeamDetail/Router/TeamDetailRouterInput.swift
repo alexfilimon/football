@@ -9,4 +9,6 @@
 import Foundation
 
 protocol TeamDetailRouterInput {
+    func dismiss()
+    func showPlayers(with team: Team, output: PlayerListModuleOutput?)
 }

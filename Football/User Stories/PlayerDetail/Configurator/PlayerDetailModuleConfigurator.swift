@@ -12,9 +12,11 @@ final class PlayerDetailModuleConfigurator {
 
     // MARK: - Internal methods
 
-    func configure(player: Player?, output: PlayerDetailModuleOutput? = nil) -> PlayerDetailViewController {
-        guard let view = UIStoryboard(name: String(describing: PlayerDetailViewController.self),
-                                      bundle: Bundle.main).instantiateInitialViewController() as? PlayerDetailViewController else {
+    func configure(player: Player? = nil, team: Team? = nil, output: PlayerDetailModuleOutput? = nil) -> PlayerDetailViewController {
+        guard let view = UIStoryboard(
+            name: String(describing: PlayerDetailViewController.self),
+            bundle: Bundle.main
+        ).instantiateInitialViewController() as? PlayerDetailViewController else {
             fatalError("Can't load PlayerDetailViewController from storyboard, check that controller is initial view controller")
         }
         let presenter = PlayerDetailPresenter()
@@ -27,6 +29,7 @@ final class PlayerDetailModuleConfigurator {
         view.output = presenter
 
         presenter.configure(with: player)
+        presenter.configure(with: team)
 
         return view
     }

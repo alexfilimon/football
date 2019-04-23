@@ -14,19 +14,24 @@ final class PlayerListViewController: UIViewController, PlayerListViewInput, Mod
     // MARK: - Properties
 
     var output: PlayerListViewOutput?
-    lazy var adapter = BaseTableDataDisplayManager(collection: tableView)
+    lazy var adapter = ActionableTableDataDisplayManager(collection: tableView)
 
     // MARK: - Subviews
 
     @IBOutlet private weak var tableView: UITableView!
-    
+
     // MARK: - UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
         output?.viewLoaded()
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addPlayer))
+        navigationItem.title = "Игроки"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addPlayer)
+        )
     }
 
     // MARK: - PlayerListViewInput
@@ -39,9 +44,12 @@ final class PlayerListViewController: UIViewController, PlayerListViewInput, Mod
         adapter.addSectionHeaderGenerator(EmptyTableHeaderGenerator())
 
         for player in players {
-            let generator = BaseCellGenerator<PlayerListTableViewCell>(with: player)
+            let generator = PlayerListTableCellGenerator(title: player.name ?? "", description: player.phone ?? "")
             generator.didSelectEvent += { [weak self] in
                 self?.output?.playerSelected(player)
+            }
+            generator.didRemoveEvent += { [weak self] in
+                self?.output?.removePlayer(player)
             }
             adapter.addCellGenerator(generator)
         }

@@ -7,5 +7,8 @@
 //
 
 protocol TeamListViewOutput {
-
+    func viewLoaded()
+    func teamSelected(_ team: Team)
+    func addTeam()
+    func removeTeam(_ team: Team)
 }

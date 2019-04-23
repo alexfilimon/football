@@ -22,8 +22,10 @@ final class PlayerDetailPresenter: PlayerDetailViewOutput, PlayerDetailModuleInp
     private var phone: String?
     private var email: String?
     private var address: String?
+    private var number: Int16 = 0
 
     private var player: Player?
+    private var team: Team?
 
     private var context = CoreDataManager.shared.persistentContainer.viewContext
 
@@ -45,6 +47,10 @@ final class PlayerDetailPresenter: PlayerDetailViewOutput, PlayerDetailModuleInp
         address = text
     }
 
+    func numberEdited(_ num: Int16) {
+        number = num
+    }
+
     func save() {
         if player == nil {
             player = Player(context: context)
@@ -54,7 +60,12 @@ final class PlayerDetailPresenter: PlayerDetailViewOutput, PlayerDetailModuleInp
         player?.address = address
         player?.email = email
         player?.phone = phone
-        try? context.save()
+        player?.number = number
+        player?.team = team
+
+        if context.hasChanges {
+            try? context.save()
+        }
 
         output?.playerUpdated()
         router?.dismiss()
@@ -62,6 +73,12 @@ final class PlayerDetailPresenter: PlayerDetailViewOutput, PlayerDetailModuleInp
 
     func viewLoaded() {
         view?.configure(with: player == nil ? .create : .edit)
+
+        view?.setName(name)
+        view?.setEmail(email)
+        view?.setPhone(phone)
+        view?.setAddress(address)
+        view?.setNumber(number)
     }
 
     // MARK: - PlayerDetailModuleInput
@@ -69,10 +86,15 @@ final class PlayerDetailPresenter: PlayerDetailViewOutput, PlayerDetailModuleInp
     func configure(with player: Player?) {
         self.player = player
 
-        name = player.name
-        email = player.email
-        phone = player.phone
-        address = player.address
+        name = player?.name
+        email = player?.email
+        phone = player?.phone
+        address = player?.address
+        number = player?.number ?? 0
+    }
+
+    func configure(with team: Team?) {
+        self.team = team
     }
 
 }

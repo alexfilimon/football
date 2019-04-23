@@ -7,5 +7,11 @@
 //
 
 protocol TeamDetailViewOutput {
+    func viewLoaded()
+    func save()
 
+    func nameEdited(_ text: String?)
+    func addressEdited(_ text: String?)
+
+    func playersSelected()
 }

@@ -16,6 +16,7 @@ target 'Football' do
   pod 'XCGLogger'
   pod 'SurfUtils/KeyboardPresentable', :git => "https://github.com/surfstudio/iOS-Utils.git"
   pod 'Eureka'
+  pod 'BTNavigationDropdownMenu'
 
   target 'FootballTests' do
     inherit! :search_paths

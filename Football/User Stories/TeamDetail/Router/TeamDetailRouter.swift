@@ -16,4 +16,13 @@ final class TeamDetailRouter: TeamDetailRouterInput {
 
 	// MARK: - TeamDetailRouterInput
 
+    func dismiss() {
+        view?.pop(animated: true)
+    }
+
+    func showPlayers(with team: Team, output: PlayerListModuleOutput? = nil) {
+        let controller = PlayerListModuleConfigurator().configure(for: team, output: output)
+        view?.push(module: controller, animated: true)
+    }
+
 }

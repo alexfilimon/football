@@ -7,5 +7,5 @@
 //
 
 protocol TeamDetailModuleInput: class {
-
+    func set(team: Team?)
 }

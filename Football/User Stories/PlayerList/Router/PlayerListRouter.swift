@@ -17,8 +17,9 @@ final class PlayerListRouter: PlayerListRouterInput {
 	// MARK: - PlayerListRouterInput
 
     func showPlayerDetail(with player: Player? = nil,
-        output: PlayerDetailModuleOutput? = nil) {
-        let module = PlayerDetailModuleConfigurator().configure(player: player, output: output)
+                          team: Team?,
+                          output: PlayerDetailModuleOutput? = nil) {
+        let module = PlayerDetailModuleConfigurator().configure(player: player, team: team, output: output)
         view?.push(module: module, animated: true)
     }
 

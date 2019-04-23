@@ -12,7 +12,7 @@ final class PlayerListModuleConfigurator {
 
     // MARK: - Internal methods
 
-    func configure(output: PlayerListModuleOutput? = nil) -> PlayerListViewController {
+    func configure(for team: Team? = nil, output: PlayerListModuleOutput? = nil) -> PlayerListViewController {
         guard let view = UIStoryboard(name: String(describing: PlayerListViewController.self),
                                       bundle: Bundle.main).instantiateInitialViewController() as? PlayerListViewController else {
             fatalError("Can't load PlayerListViewController from storyboard, check that controller is initial view controller")
@@ -25,6 +25,8 @@ final class PlayerListModuleConfigurator {
         presenter.output = output
         router.view = view
         view.output = presenter
+
+        presenter.set(team: team)
 
         return view
     }

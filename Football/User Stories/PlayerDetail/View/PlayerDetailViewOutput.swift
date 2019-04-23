@@ -7,11 +7,12 @@
 //
 
 protocol PlayerDetailViewOutput {
+    func save()
+    func viewLoaded()
+
     func nameEdited(_ text: String?)
     func emailEdited(_ text: String?)
     func phoneEdited(_ text: String?)
     func addressEdited(_ text: String?)
-
-    func save()
-    func viewLoaded()
+    func numberEdited(_ num: Int16)
 }

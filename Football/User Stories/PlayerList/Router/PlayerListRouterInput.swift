@@ -9,5 +9,5 @@
 import Foundation
 
 protocol PlayerListRouterInput {
-    func showPlayerDetail(with player: Player?, output: PlayerDetailModuleOutput?)
+    func showPlayerDetail(with player: Player?, team: Team?, output: PlayerDetailModuleOutput?)
 }

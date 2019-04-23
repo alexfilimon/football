@@ -12,7 +12,7 @@ final class TeamDetailModuleConfigurator {
 
     // MARK: - Internal methods
 
-    func configure(output: TeamDetailModuleOutput? = nil) -> TeamDetailViewController {
+    func configure(team: Team? = nil, output: TeamDetailModuleOutput? = nil) -> TeamDetailViewController {
         guard let view = UIStoryboard(name: String(describing: TeamDetailViewController.self),
                                       bundle: Bundle.main).instantiateInitialViewController() as? TeamDetailViewController else {
             fatalError("Can't load TeamDetailViewController from storyboard, check that controller is initial view controller")
@@ -25,6 +25,8 @@ final class TeamDetailModuleConfigurator {
         presenter.output = output
         router.view = view
         view.output = presenter
+
+        presenter.set(team: team)
 
         return view
     }

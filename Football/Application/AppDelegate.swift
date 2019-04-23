@@ -26,10 +26,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // configure main module
         window = UIWindow()
+
+        /// --- Games list
 //        let gamesListController = GamesListModuleConfigurator().configure()
 //        let navigationController = UINavigationController(rootViewController: gamesListController)
-        let playerListController = PlayerListModuleConfigurator().configure()
-        let navigationController = UINavigationController(rootViewController: playerListController)
+
+
+        // --- PlayerList
+//        let playerListController = PlayerListModuleConfigurator().configure()
+//        let navigationController = UINavigationController(rootViewController: playerListController)
+
+
+        // --- Team list
+        let teamListController = TeamListModuleConfigurator().configure()
+        let navigationController = UINavigationController(rootViewController: teamListController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
 
