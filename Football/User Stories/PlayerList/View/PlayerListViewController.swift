@@ -26,7 +26,7 @@ final class PlayerListViewController: UIViewController, PlayerListViewInput, Mod
         super.viewDidLoad()
         output?.viewLoaded()
 
-        navigationItem.title = "Игроки"
+        title = "Игроки"
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
@@ -44,7 +44,7 @@ final class PlayerListViewController: UIViewController, PlayerListViewInput, Mod
         adapter.addSectionHeaderGenerator(EmptyTableHeaderGenerator())
 
         for player in players {
-            let generator = PlayerListTableCellGenerator(title: player.name ?? "", description: player.phone ?? "")
+            let generator = PlayerListTableCellGenerator(title: player.name ?? "", description: String(player.number))
             generator.didSelectEvent += { [weak self] in
                 self?.output?.playerSelected(player)
             }

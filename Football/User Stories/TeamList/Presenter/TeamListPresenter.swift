@@ -19,6 +19,13 @@ final class TeamListPresenter: TeamListViewOutput, TeamListModuleInput {
 
     private lazy var context = CoreDataManager.shared.persistentContainer.viewContext
     private var teams: [Team] = []
+    private let type: TeamListType
+
+    // MARK: - Initialization
+
+    public init(type: TeamListType) {
+        self.type = type
+    }
 
     // MARK: - TeamListViewOutput
 

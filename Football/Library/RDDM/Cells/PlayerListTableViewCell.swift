@@ -49,5 +49,5 @@ class PlayerListTableViewCell: UITableViewCell {
         leftLabel.textColor = .black
         rightLabel.textColor = .gray
     }
-    
+
 }

@@ -25,7 +25,7 @@ final class TeamListViewController: UIViewController, TeamListViewInput, ModuleT
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "Комманды"
+        title = "Команды"
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,

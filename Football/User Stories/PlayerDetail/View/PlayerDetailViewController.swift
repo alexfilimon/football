@@ -44,7 +44,7 @@ final class PlayerDetailViewController: FormViewController, PlayerDetailViewInpu
         switch state {
         case .edit:
             buttonTitle = "Сохранить"
-            title = "Редактирование"
+            title = "Изменение"
         case .create:
             buttonTitle = "Добавить"
             title = "Создание"
@@ -64,7 +64,7 @@ final class PlayerDetailViewController: FormViewController, PlayerDetailViewInpu
     }
 
     func setEmail(_ text: String?) {
-        let row: EmailRow? = form.rowBy(tag: Constants.Row.email)
+        let row: TextRow? = form.rowBy(tag: Constants.Row.email)
         row?.value = text
     }
 
@@ -87,12 +87,7 @@ final class PlayerDetailViewController: FormViewController, PlayerDetailViewInpu
 
     @objc
     private func save() {
-        let validationErrors = form.validate()
-        if validationErrors.isEmpty {
-            output?.save()
-        } else {
-            print("errors: \(validationErrors)")
-        }
+        output?.save()
     }
 
     // MARK: - Private methods
@@ -100,9 +95,8 @@ final class PlayerDetailViewController: FormViewController, PlayerDetailViewInpu
     private func configureForms() {
         form +++ Section("Информация")
             <<< TextRow(Constants.Row.name) {
-                $0.title = "Имя"
+                $0.title = "Имя*"
                 $0.placeholder = "Иван Петров"
-                $0.add(rule: RuleRequired())
                 $0.validationOptions = .validatesOnChange
             }
             .onChange { [weak self] (row) in
@@ -110,11 +104,8 @@ final class PlayerDetailViewController: FormViewController, PlayerDetailViewInpu
             }
 
             <<< IntRow(Constants.Row.number) {
-                $0.title = "Номер"
+                $0.title = "Номер*"
                 $0.placeholder = "7"
-                $0.add(rule: RuleRequired())
-                $0.add(rule: RuleGreaterThan(min: 0))
-                $0.add(rule: RuleSmallerThan(max: 100))
                 $0.validationOptions = .validatesOnChange
             }
             .onChange { [weak self] (row) in
@@ -124,16 +115,14 @@ final class PlayerDetailViewController: FormViewController, PlayerDetailViewInpu
             <<< PhoneRow(Constants.Row.phone) {
                 $0.title = "Телефон"
                 $0.placeholder = "8 999 999 99 99"
-                $0.add(rule: RuleRequired())
             }
             .onChange { [weak self] (row) in
                 self?.output?.phoneEdited(row.value)
             }
 
-            <<< EmailRow(Constants.Row.email) {
+            <<< TextRow(Constants.Row.email) {
                 $0.title = "Почта"
                 $0.placeholder = "email@mail.ru"
-                $0.add(rule: RuleRequired())
             }
             .onChange { [weak self] (row) in
                 self?.output?.emailEdited(row.value)
@@ -142,7 +131,6 @@ final class PlayerDetailViewController: FormViewController, PlayerDetailViewInpu
             <<< TextRow(Constants.Row.address) {
                 $0.title = "Адрес"
                 $0.placeholder = "Воронеж"
-                $0.add(rule: RuleRequired())
             }
             .onChange { [weak self] (row) in
                 self?.output?.addressEdited(row.value)

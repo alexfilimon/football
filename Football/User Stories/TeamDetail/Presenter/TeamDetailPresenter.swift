@@ -35,6 +35,9 @@ final class TeamDetailPresenter: TeamDetailViewOutput, TeamDetailModuleInput {
     }
 
     func save() {
+        guard isValid() else {
+            return
+        }
         saveTeam()
         router?.dismiss()
     }
@@ -48,7 +51,9 @@ final class TeamDetailPresenter: TeamDetailViewOutput, TeamDetailModuleInput {
     }
 
     func playersSelected() {
-        // TODO: сделать валидацию: точно ли сохранились? может do/catch сделать
+        guard isValid() else {
+            return
+        }
         saveTeam()
 
         if let team = team {
@@ -63,6 +68,22 @@ final class TeamDetailPresenter: TeamDetailViewOutput, TeamDetailModuleInput {
 
         name = team?.name
         address = team?.address
+    }
+
+    // MARK: - Private methods
+
+    private func isValid() -> Bool {
+        guard let name = name else {
+            view?.show(type: .error, title: "Ошибка", description: "Заполните все обязателные поля")
+            return false
+        }
+
+        if name.count < 3 {
+            view?.show(type: .error, title: "Ошибка", description: "Название команды должно быть больше 2 символов")
+            return false
+        }
+
+        return true
     }
 
     private func saveTeam() {

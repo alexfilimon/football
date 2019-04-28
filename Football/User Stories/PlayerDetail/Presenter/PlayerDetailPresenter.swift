@@ -10,6 +10,12 @@ import Foundation
 
 final class PlayerDetailPresenter: PlayerDetailViewOutput, PlayerDetailModuleInput {
 
+    // MARK: - Nested types
+
+    private enum Constants {
+        static let defaultNumber: Int16 = 10
+    }
+
     // MARK: - Properties
 
     weak var view: PlayerDetailViewInput?
@@ -22,7 +28,7 @@ final class PlayerDetailPresenter: PlayerDetailViewOutput, PlayerDetailModuleInp
     private var phone: String?
     private var email: String?
     private var address: String?
-    private var number: Int16 = 0
+    private var number: Int16 = Constants.defaultNumber
 
     private var player: Player?
     private var team: Team?
@@ -52,6 +58,10 @@ final class PlayerDetailPresenter: PlayerDetailViewOutput, PlayerDetailModuleInp
     }
 
     func save() {
+        guard isValid() else {
+            return
+        }
+
         if player == nil {
             player = Player(context: context)
             player?.id = UUID()
@@ -90,11 +100,37 @@ final class PlayerDetailPresenter: PlayerDetailViewOutput, PlayerDetailModuleInp
         email = player?.email
         phone = player?.phone
         address = player?.address
-        number = player?.number ?? 0
+        number = player?.number ?? Constants.defaultNumber
     }
 
     func configure(with team: Team?) {
         self.team = team
+    }
+
+    private func isValid() -> Bool {
+        guard let name = name else {
+            view?.show(type: .error, title: "Ошибка", description: "Заполните все обязателные поля")
+            return false
+        }
+
+        if name.count < 3 {
+            view?.show(type: .error, title: "Ошибка", description: "Заполните поле 'Имя' правильно")
+            return false
+        }
+
+        if let email = email {
+            if !Validator.isValidEmail(testStr: email) {
+                view?.show(type: .error, title: "Ошибка", description: "Заполните поле 'Email' правильно")
+                return false
+            }
+        }
+
+        if number < 1 || number > 99 {
+            view?.show(type: .error, title: "Ошибка", description: "Номер игрока должен быть больше 0 и меньше 100")
+            return false
+        }
+
+        return true
     }
 
 }

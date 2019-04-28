@@ -41,6 +41,7 @@ final class PlayerListPresenter: PlayerListViewOutput, PlayerListModuleInput {
         try? context.save()
         players.removeAll(where: { $0.id == player.id })
         view?.showPlayers(players)
+        output?.playersUpdated()
     }
 
     // MARK: - PlayerListModuleInput
@@ -55,6 +56,7 @@ final class PlayerListPresenter: PlayerListViewOutput, PlayerListModuleInput {
         let request: NSFetchRequest<Player> = Player.fetchRequest()
         if let team = team {
             request.predicate = NSPredicate(format: "team = %@", argumentArray: [team])
+            request.sortDescriptors = [NSSortDescriptor(key: "number", ascending: true)]
         }
         let players = (try? context.fetch(request)) ?? []
         self.players = players

@@ -15,8 +15,14 @@ class TeamPlayersCell: Cell<Int>, CellType {
 
     @IBOutlet private weak var leftLabel: UILabel!
     @IBOutlet private weak var rightLabel: UILabel!
-    
+
     // MARK: - Cell
+
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+
+        backgroundColor = highlighted ? Color.delimeter : Color.white
+    }
 
     override func setup() {
         super.setup()
@@ -29,12 +35,14 @@ class TeamPlayersCell: Cell<Int>, CellType {
 
         leftLabel.textColor = .black
         rightLabel.textColor = .black
+
+        selectionStyle = .none
     }
 
     override func update() {
         rightLabel.text = String(row.value ?? 0)
     }
-    
+
 }
 
 final class TeamPlayerRow: Row<TeamPlayersCell>, RowType {

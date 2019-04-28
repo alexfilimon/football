@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftMessages
 
 //var dbQueue: DatabaseQueue?
 
@@ -16,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Properties
 
     var window: UIWindow?
+    let cacheDirectory: URL = {
+        let urls = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)
+        return urls[urls.endIndex - 1]
+    }()
 
     // MARK: - Private properties
 
@@ -38,10 +43,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
         // --- Team list
-        let teamListController = TeamListModuleConfigurator().configure()
-        let navigationController = UINavigationController(rootViewController: teamListController)
-        window?.rootViewController = navigationController
+
+        // --- Main tab bar
+        window?.rootViewController = MainTabBarModuleConfigurator().configure()
         window?.makeKeyAndVisible()
+
+        // configure SwiftMessages
+        var config = SwiftMessages.Config()
+        config.preferredStatusBarStyle = .default
+        config.dimMode = .gray(interactive: true)
+        config.presentationStyle = .top
+        config.presentationContext = SwiftMessages.PresentationContext.window(windowLevel: .statusBar)
+        config.duration = .forever
+        SwiftMessages.defaultConfig = config
+
+        // to initialize logger
+        _ = log
 
         return true
     }

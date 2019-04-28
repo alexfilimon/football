@@ -18,6 +18,8 @@
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
+  internal static let games = ImageAsset(name: "games")
+  internal static let teams = ImageAsset(name: "teams")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

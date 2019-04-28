@@ -30,6 +30,7 @@ final class TeamDetailViewController: FormViewController, TeamDetailViewInput, M
     override func viewDidLoad() {
         super.viewDidLoad()
         configureForm()
+        configureNavigationItem()
 
         output?.viewLoaded()
     }
@@ -42,7 +43,7 @@ final class TeamDetailViewController: FormViewController, TeamDetailViewInput, M
         switch state {
         case .edit:
             buttonTitle = "Сохранить"
-            title = "Редактирование"
+            title = "Изменение"
         case .create:
             buttonTitle = "Добавить"
             title = "Создание"
@@ -75,22 +76,20 @@ final class TeamDetailViewController: FormViewController, TeamDetailViewInput, M
 
     @objc
     private func save() {
-        let validationErrors = form.validate()
-        if validationErrors.isEmpty {
-            output?.save()
-        } else {
-            print("errors: \(validationErrors)")
-        }
+        output?.save()
     }
 
     // MARK: - Private methods
 
+    private func configureNavigationItem() {
+         navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
+    }
+
     private func configureForm() {
         form +++ Section("Информация")
             <<< TextRow(Constants.Row.name) {
-                $0.title = "Название"
+                $0.title = "Название*"
                 $0.placeholder = "Старт"
-                $0.add(rule: RuleRequired())
                 $0.validationOptions = .validatesOnChange
             }
             .onChange { [weak self] (row) in
@@ -100,7 +99,6 @@ final class TeamDetailViewController: FormViewController, TeamDetailViewInput, M
             <<< TextRow(Constants.Row.address) {
                 $0.title = "Адрес"
                 $0.placeholder = "Воронеж"
-                $0.add(rule: RuleRequired())
                 $0.validationOptions = .validatesOnChange
             }
             .onChange { [weak self] (row) in

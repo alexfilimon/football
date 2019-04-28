@@ -23,7 +23,7 @@ final class GamesListRouter: GamesListRouterInput {
     }
 
     func showRemoveAlert(for game: Game, onRemove: @escaping EmptyClosure) {
-        let alertController = UIAlertController(title: "Удалить?", message: "Вы действительно хотете удалить этот протокол?", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Удалить?", message: "Вы действительно хотете удалить эту игру?", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Нет", style: .cancel, handler: nil))
         alertController.addAction(UIAlertAction(title: "Да", style: .destructive, handler: { (action) in
             onRemove()

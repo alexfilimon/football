@@ -12,12 +12,12 @@ final class TeamListModuleConfigurator {
 
     // MARK: - Internal methods
 
-    func configure(output: TeamListModuleOutput? = nil) -> TeamListViewController {
+    func configure(with type: TeamListType, output: TeamListModuleOutput? = nil) -> TeamListViewController {
         guard let view = UIStoryboard(name: String(describing: TeamListViewController.self),
                                       bundle: Bundle.main).instantiateInitialViewController() as? TeamListViewController else {
             fatalError("Can't load TeamListViewController from storyboard, check that controller is initial view controller")
         }
-        let presenter = TeamListPresenter()
+        let presenter = TeamListPresenter(type: type)
         let router = TeamListRouter()
 
         presenter.view = view

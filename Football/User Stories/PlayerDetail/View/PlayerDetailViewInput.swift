@@ -6,7 +6,7 @@
 //  Copyright © 2019 alexfilimon. All rights reserved.
 //
 
-protocol PlayerDetailViewInput: class {
+protocol PlayerDetailViewInput: class, SMDisplayable {
     func configure(with state: PlayerDetailViewStyle)
     func setName(_ text: String?)
     func setEmail(_ text: String?)
