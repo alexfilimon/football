@@ -10,4 +10,5 @@ import Foundation
 
 protocol TeamListRouterInput {
     func showTeamDetail(_ team: Team?, output: TeamDetailModuleOutput?)
+    func dismiss()
 }

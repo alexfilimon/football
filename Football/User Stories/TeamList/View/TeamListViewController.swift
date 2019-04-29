@@ -26,31 +26,43 @@ final class TeamListViewController: UIViewController, TeamListViewInput, ModuleT
         super.viewDidLoad()
 
         title = "Команды"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .add,
-            target: self,
-            action: #selector(addTeam)
-        )
 
         output?.viewLoaded()
     }
 
     // MARK: - TeamListViewInput
 
-    func configure(with teams: [Team]) {
+    func configure(with type: TeamListType) {
+        switch type {
+        case .default:
+            navigationItem.rightBarButtonItem = UIBarButtonItem(
+                barButtonSystemItem: .add,
+                target: self,
+                action: #selector(addTeam)
+            )
+        case .select:
+            ()
+        }
+    }
+
+    func configure(with teams: [(key: String, value: [Team])]) {
         adapter.clearCellGenerators()
         adapter.clearHeaderGenerators()
 
-        for team in teams {
-            let generator = PlayerListTableCellGenerator(title: team.name ?? "", description: team.address ?? "")
-            generator.didSelectEvent += { [weak self] in
-                self?.output?.teamSelected(team)
+        for teamTuple in teams {
+            adapter.addSectionHeaderGenerator(GameHeaderCellGenerator(with: teamTuple.key))
+            for team in teamTuple.value {
+                let generator = PlayerListTableCellGenerator(title: team.name ?? "", description: team.address ?? "")
+                generator.didSelectEvent += { [weak self] in
+                    self?.output?.teamSelected(team)
+                }
+                generator.didRemoveEvent += { [weak self] in
+                    self?.output?.removeTeam(team)
+                }
+                adapter.addCellGenerator(generator)
             }
-            generator.didRemoveEvent += { [weak self] in
-                self?.output?.removeTeam(team)
-            }
-            adapter.addCellGenerator(generator)
         }
+
         adapter.forceRefill()
     }
 

@@ -6,6 +6,8 @@
 //  Copyright © 2019 alexfilimon. All rights reserved.
 //
 
+import Foundation
+
 protocol GamesListViewInput: class {
-    func configure(with state: GamesListViewState)
+    func configure(with games: [(key: Date?, value: [Game])])
 }

@@ -9,7 +9,7 @@
 import UIKit
 import Eureka
 
-class TeamPlayersCell: Cell<Int>, CellType {
+class TeamPlayersCell: Cell<String>, CellType {
 
     // MARK: - Subviews
 
@@ -27,8 +27,8 @@ class TeamPlayersCell: Cell<Int>, CellType {
     override func setup() {
         super.setup()
 
-        leftLabel.text = "Игроков"
-        rightLabel.text = String(row.value ?? 0)
+        leftLabel.text = row.title
+        rightLabel.text = row.value
 
         leftLabel.numberOfLines = 0
         rightLabel.numberOfLines = 0
@@ -40,7 +40,7 @@ class TeamPlayersCell: Cell<Int>, CellType {
     }
 
     override func update() {
-        rightLabel.text = String(row.value ?? 0)
+        rightLabel.text = row.value
     }
 
 }

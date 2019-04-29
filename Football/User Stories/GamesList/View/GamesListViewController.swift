@@ -34,13 +34,33 @@ final class GamesListViewController: UIViewController, GamesListViewInput, Modul
 
     // MARK: - GamesListViewInput
 
-    func configure(with state: GamesListViewState) {
-        switch state {
-        case .data(games: let games):
-            configureData(games)
-        case .error(error: _):
-            ()
+    func configure(with games: [(key: Date?, value: [Game])]) {
+        adapter.clearHeaderGenerators()
+        adapter.clearCellGenerators()
+
+        for gameTuple in games {
+            var title: String = "Undefines"
+            if let date = gameTuple.key {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateStyle = .long
+                title = dateFormatter.string(from: date)
+            }
+
+            adapter.addSectionHeaderGenerator(GameHeaderCellGenerator(with: title))
+            // add section generator
+            for game in gameTuple.value {
+                let generator = GameCellGenerator(game: game)
+                generator.didSelectEvent += { [weak self] in
+                    self?.output?.gameSelected(game: game)
+                }
+                generator.didRemoveEvent += { [weak self] in
+                    self?.output?.gameDelete(game: game)
+                }
+                adapter.addCellGenerator(generator)
+            }
         }
+
+        adapter.forceRefill()
     }
 
     // MARK: - Private configurators
@@ -51,27 +71,6 @@ final class GamesListViewController: UIViewController, GamesListViewInput, Modul
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                             target: self,
                                                             action: #selector(addClicked))
-    }
-
-    // MARK: - Private methods
-
-    private func configureData(_ games: [Game]) {
-        adapter.clearHeaderGenerators()
-        adapter.clearCellGenerators()
-        adapter.addSectionHeaderGenerator(EmptyTableHeaderGenerator())
-
-        for game in games {
-            let generator = GameCellGenerator(game: game)
-            generator.didSelectEvent += { [weak self] in
-                self?.output?.gameSelected(game: game)
-            }
-            generator.didRemoveEvent += { [weak self] in
-                self?.output?.gameDelete(game: game)
-            }
-            adapter.addCellGenerator(generator)
-        }
-
-        adapter.forceRefill()
     }
 
     // MARK: - Actions

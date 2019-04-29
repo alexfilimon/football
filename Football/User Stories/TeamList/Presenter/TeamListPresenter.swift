@@ -18,7 +18,7 @@ final class TeamListPresenter: TeamListViewOutput, TeamListModuleInput {
     var output: TeamListModuleOutput?
 
     private lazy var context = CoreDataManager.shared.persistentContainer.viewContext
-    private var teams: [Team] = []
+    private var teams: [(key: String, value: [Team])] = []
     private let type: TeamListType
 
     // MARK: - Initialization
@@ -30,11 +30,18 @@ final class TeamListPresenter: TeamListViewOutput, TeamListModuleInput {
     // MARK: - TeamListViewOutput
 
     func viewLoaded() {
+        view?.configure(with: type)
         loadData()
     }
 
     func teamSelected(_ team: Team) {
-        router?.showTeamDetail(team, output: self)
+        switch type {
+        case .default:
+            router?.showTeamDetail(team, output: self)
+        case .select:
+            output?.teamSelected(team)
+            router?.dismiss()
+        }
     }
 
     func addTeam() {
@@ -43,8 +50,8 @@ final class TeamListPresenter: TeamListViewOutput, TeamListModuleInput {
 
     func removeTeam(_ team: Team) {
         context.delete(team)
-        teams.removeAll(where: { $0.id == team.id })
         try? context.save()
+        loadData()
         view?.configure(with: teams)
     }
 
@@ -55,9 +62,18 @@ final class TeamListPresenter: TeamListViewOutput, TeamListModuleInput {
     private func loadData() {
         let request: NSFetchRequest<Team> = Team.fetchRequest()
         let teams = (try? context.fetch(request)) ?? []
-        self.teams = teams
 
-        view?.configure(with: teams)
+        let teamsDict = Dictionary(grouping: teams) { (element) -> String in
+            if let name = element.name, let char = name.first {
+                return String(char).uppercased()
+            }
+            return "Undefined"
+        }
+        self.teams = teamsDict.sorted(by: { (left, right) -> Bool in
+            return left.key < right.key
+        })
+
+        view?.configure(with: self.teams)
     }
 
 }

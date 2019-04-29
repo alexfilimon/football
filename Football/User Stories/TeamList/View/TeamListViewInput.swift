@@ -7,5 +7,6 @@
 //
 
 protocol TeamListViewInput: class {
-    func configure(with teams: [Team])
+    func configure(with type: TeamListType)
+    func configure(with teams: [(key: String, value: [Team])])
 }

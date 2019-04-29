@@ -21,4 +21,8 @@ final class TeamListRouter: TeamListRouterInput {
         view?.push(module: module, animated: true, hideTabBar: true)
     }
 
+    func dismiss() {
+        view?.pop(animated: true)
+    }
+
 }

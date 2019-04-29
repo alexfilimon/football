@@ -7,5 +7,5 @@
 //
 
 protocol TeamListModuleOutput: class {
-
+    func teamSelected(_ team: Team)
 }

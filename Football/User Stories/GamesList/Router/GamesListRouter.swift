@@ -16,10 +16,9 @@ final class GamesListRouter: GamesListRouterInput {
 
 	// MARK: - GamesListRouterInput
 
-    func addGame(output: GameAddModuleOutput? = nil) {
-        let addGameController = GameAddModuleConfigurator().configure(output: output)
-        let navigationController = UINavigationController(rootViewController: addGameController)
-        view?.presentModule(navigationController, animated: true, completion: nil)
+    func addGame(output: GameDetailModuleOutput? = nil) {
+        let detailGameController = GameDetailModuleConfigurator().configure(output: output)
+        view?.push(module: detailGameController, animated: true, hideTabBar: true)
     }
 
     func showRemoveAlert(for game: Game, onRemove: @escaping EmptyClosure) {
@@ -31,10 +30,9 @@ final class GamesListRouter: GamesListRouterInput {
         view?.presentModule(alertController, animated: true, completion: nil)
     }
 
-    func showDetail(game: Game, output: GameAddModuleOutput? = nil) {
-//        let addGameController = GameAddModuleConfigurator().configure(editingGame: game, output: output)
-//        let navigationController = UINavigationController(rootViewController: addGameController)
-//        view?.presentModule(navigationController, animated: true, completion: nil)
+    func showDetail(game: Game, output: GameDetailModuleOutput? = nil) {
+        let detailGameController = GameDetailModuleConfigurator().configure(game: game, output: output)
+        view?.push(module: detailGameController, animated: true, hideTabBar: true)
     }
 
 }

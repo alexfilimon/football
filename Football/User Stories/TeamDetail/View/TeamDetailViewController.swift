@@ -69,7 +69,7 @@ final class TeamDetailViewController: FormViewController, TeamDetailViewInput, M
 
     func setCountPlayers(_ count: Int) {
         let row: TeamPlayerRow? = form.rowBy(tag: Constants.Row.players)
-        row?.value = count
+        row?.value = String(count)
     }
 
     // MARK: - Actions
@@ -105,7 +105,9 @@ final class TeamDetailViewController: FormViewController, TeamDetailViewInput, M
                 self?.output?.addressEdited(row.value)
             }
 
-            <<< TeamPlayerRow(Constants.Row.players)
+            <<< TeamPlayerRow(Constants.Row.players) {
+                $0.title = "Игроки"
+            }
             .onCellSelection { [weak self] (cell, row) in
                 self?.output?.playersSelected()
             }
